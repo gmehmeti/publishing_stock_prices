@@ -1,0 +1,60 @@
+
+## Detyra Nr. 1 ##
+
+
+Te zhvillohet aplikacioni Web Api i cili do te publikoi qmimet e aksioneve te kompanive ne burse ne intervale prej 15 min. Qmimet ipen ne CSV fajl. 
+
+Detyra e aplikacionit eshte qe ti kategorizoi qmimiet ne interval kohor prej 15 minutave. Nese qmimi nuk ekziston per ate interval kohor, atehere ipet qmimi i meparshem. Nese nuk ka qmim te meparshem, qmimi kthehet i zbrazet. Nese brenda intervalit prej 15 min kemi me shume se nje qmim, atehere perdoret qmimi i fundit per ate interval.
+
+Nese i kemi keto informata:
+
+|Nr | Data                 |   Shifra     |  Qmimi i Blerjes |   Qmimi i shitjes |
+|---|----------------------|--------------|------------------|-------------------|
+|1. | 30/08/2010 10:48:09  | AU000000AFI5 |            5.81  |             5.95  |
+|2. | 30/08/2010 11:34:21  | AU000000AFI5 |            5.82  |             5.94  |
+|3. | 30/08/2010 12:00:00  | AU000000AFI5 |            5.84  |             5.96  |
+|4. | 30/08/2010 12:17:49  | AU000000AFI5 |            5.83  |             5.90  |
+|5. | 30/08/2010 12:27:41  | AU000000AFI5 |            5.86  |             5.95  |
+|6. | 30/08/2010 13:43:41  | AU000000AFI5 |            5.85  |             5.95  |
+|7. | 30/08/2010 13:43:46  | AU000000AFI5 |            5.87  |             5.95  |
+
+
+
+### Shembuj: ###
+	
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen  **30/08/2010 09:30**, atehere rezultati JSON eshte i zbrazet pas nuk ka vlera te meperashme:
+```		
+{
+	"shifra" : "AU000000AFI5",
+	"qmimi_bleres" : "",
+	"qmimi_shites" : "",
+}
+```
+		
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **30/08/2010 11:00**, atehere rezultati JSON eshte (rezultati *nr.1* ne tabelen me lart) se eshte me i peraferti):
+```
+{
+	"shifra" : "AU000000AFI5",
+	"qmimi_bleres" : "5.81",
+	"qmimi_shites" : "5.95,
+}
+```		
+
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **30/08/2010 12:00**, atehere rezultati JSON eshte (rezultati *nr.3* ne tabelen me lart) se perputhet me kohen:	
+```	
+{
+	"shifra" : "AU000000AFI5",
+	"qmimi_bleres" : "5.84",
+	"qmimi_shites" : "5.96",
+}
+```
+
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **10/09/2010 9:00**, atehere rezultati JSON eshte (rezultati *nr.7* ne tabelen me lart) se eshte i fundit i meparshem:	
+```	
+{
+	"shifra" : "AU000000AFI5",
+	"qmimi_bleres" : "5.87",
+	"qmimi_shites" : "5.95",
+}
+```
+
