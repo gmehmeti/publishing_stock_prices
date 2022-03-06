@@ -1,4 +1,4 @@
-# publishing stock prices using Python
+# Publishing stock prices using Python
 
 |Nr | Data                 |   Shifra     |  Qmimi i Blerjes |   Qmimi i shitjes |
 |---|----------------------|--------------|------------------|-------------------|
