@@ -11,6 +11,6 @@
 |7. | 30/08/2010 13:43:46  | AU000000AFI5 |            5.87  |             5.95  |
 
 
-# Install requirements from requirements.txt file
+Install requirements from requirements.txt file
 
 pip install -r requirements.txt
