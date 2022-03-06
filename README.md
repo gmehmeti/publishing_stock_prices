@@ -9,3 +9,8 @@
 |5. | 30/08/2010 12:27:41  | AU000000AFI5 |            5.86  |             5.95  |
 |6. | 30/08/2010 13:43:41  | AU000000AFI5 |            5.85  |             5.95  |
 |7. | 30/08/2010 13:43:46  | AU000000AFI5 |            5.87  |             5.95  |
+
+
+# Install requirements from requirements.txt file
+
+pip install -r requirements.txt
