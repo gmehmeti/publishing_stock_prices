@@ -4,7 +4,9 @@
 
 Te zhvillohet aplikacioni Web Api i cili do te publikoi qmimet e aksioneve te kompanive ne burse ne intervale prej 15 min. Qmimet ipen ne CSV fajl. 
 
-Detyra e aplikacionit eshte qe ti kategorizoi qmimiet ne interval kohor prej 15 minutave. Nese qmimi nuk ekziston per ate interval kohor, atehere ipet qmimi i meparshem. Nese nuk ka qmim te meparshem, qmimi kthehet i zbrazet. Nese brenda intervalit prej 15 min kemi me shume se nje qmim, atehere perdoret qmimi i fundit per ate interval.
+Detyra e aplikacionit eshte qe ti kategorizoi qmimiet ne interval kohor prej 15 minutave. 
+Nese qmimi nuk ekziston per ate interval kohor, atehere ipet qmimi i meparshem. Nese nuk ka qmim te meparshem, 
+qmimi kthehet i zbrazet. Nese brenda intervalit prej 15 min kemi me shume se nje qmim, atehere perdoret qmimi i fundit per ate interval.
 
 Nese i kemi keto informata:
 
@@ -22,7 +24,8 @@ Nese i kemi keto informata:
 
 ### Shembuj: ###
 	
-* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen  **30/08/2010 09:30**, atehere rezultati JSON eshte i zbrazet pas nuk ka vlera te meperashme:
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen  **30/08/2010 09:30**, 
+atehere rezultati JSON eshte i zbrazet pas nuk ka vlera te meperashme:
 ```		
 {
 	"shifra" : "AU000000AFI5",
@@ -31,7 +34,8 @@ Nese i kemi keto informata:
 }
 ```
 		
-* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **30/08/2010 11:00**, atehere rezultati JSON eshte (rezultati *nr.1* ne tabelen me lart) se eshte me i peraferti):
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **30/08/2010 11:00**, 
+atehere rezultati JSON eshte (rezultati *nr.1* ne tabelen me lart) se eshte me i peraferti):
 ```
 {
 	"shifra" : "AU000000AFI5",
@@ -40,7 +44,8 @@ Nese i kemi keto informata:
 }
 ```		
 
-* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **30/08/2010 12:00**, atehere rezultati JSON eshte (rezultati *nr.3* ne tabelen me lart) se perputhet me kohen:	
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **30/08/2010 12:00**, 
+atehere rezultati JSON eshte (rezultati *nr.3* ne tabelen me lart) se perputhet me kohen:	
 ```	
 {
 	"shifra" : "AU000000AFI5",
@@ -49,7 +54,8 @@ Nese i kemi keto informata:
 }
 ```
 
-* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **10/09/2010 9:00**, atehere rezultati JSON eshte (rezultati *nr.7* ne tabelen me lart) se eshte i fundit i meparshem:	
+* Nese kerkesa eshte per **AU000000AFI5** per daten dhe kohen **10/09/2010 9:00**, 
+atehere rezultati JSON eshte (rezultati *nr.7* ne tabelen me lart) se eshte i fundit i meparshem:	
 ```	
 {
 	"shifra" : "AU000000AFI5",
@@ -58,3 +64,8 @@ Nese i kemi keto informata:
 }
 ```
 
+# date_input = "12/07/2011 12:47"
+# serialNo = 'NZTPWDT100C7'
+# Rezultati i pritur (No. 616306) :
+# 'shifra': 'NZTPWDT100C7', 'data': Timestamp('12/07/2011 12:32:25'),
+# 'qmimi_bleres': 6.65, 'qmimi_shites': 6.6

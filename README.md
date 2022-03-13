@@ -12,5 +12,14 @@
 
 
 Install requirements from requirements.txt file
-
+```
 pip install -r requirements.txt
+```
+
+## Usage
+```
+uvicorn stockAPI:app --reload
+
+# http://127.0.0.1:8000/docs
+
+```
