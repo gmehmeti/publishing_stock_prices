@@ -90,6 +90,30 @@ def get_stock_price(serialNo: str, date_input: str, take: int):
 
     return m.stock_price_model
 
+def get_stock_by_no(No: int):
+
+    data = read_stock_data()
+    data = data[data["No"] == No]
+
+    data['Date'] = pd.to_datetime(data.Date, dayfirst=True)
+    data['Date'] = data['Date'].dt.floor('Min')
+
+    price_exist_len = len(data.index)
+    if price_exist_len > 0:
+        result = data.head(1)
+        result = result.fillna(0)
+        # print(result)
+        for index, row in result.iterrows():
+            key = row.No
+            output = {}
+            output["no"] = key
+            output["date"] = row["Date"]
+            output["serialno"] = row["SerialNo"]
+            output['costprice'] = row["CostPrice"]
+            output['saleprice'] = row["SalePrice"]            
+            m.stock_price_model[str(key)] = output
+
+    return m.stock_price_model
 
 # print(get_stock_by_serialno('NZTPWDT100C7', "12/07/2011 12:47"))
 # print(get_stock_price('NZTPWDT100C7', "12/07/2011 12:47", 10))

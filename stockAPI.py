@@ -27,3 +27,9 @@ def get_stock_price(serialNo: str = Query(None, description="Serial No", min_len
                     take: int = Query(None, description="Take rows", gt=0)):
     result = main.get_stock_price(serialNo, date_input, take)
     return result
+
+
+@app.get("/get-stock-by-no")
+def get_stock_price_by_no(No: int = Query(None, description="Unique No", gt=0)):
+    result = main.get_stock_by_no(No)
+    return result
